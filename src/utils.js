@@ -30,7 +30,7 @@ const getClosestNetworkStation = (
   ];
 
 // D² = x² + y²
-const getCalculatedDistance = (device, closesStation) => ({
+const getCalculatedCoordination = (device, closesStation) => ({
   x: Math.pow(closesStation.x - device.x, 2),
   y: Math.pow(closesStation.y - device.y, 2),
 });
@@ -40,5 +40,5 @@ module.exports = {
   getSummedValueOfDevice,
   getClosestNetworkStationIndex,
   getClosestNetworkStation,
-  getCalculatedDistance,
+  getCalculatedCoordination,
 };

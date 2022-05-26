@@ -4,7 +4,7 @@ const {
   getSummedValueOfDevice,
   getClosestNetworkStationIndex,
   getClosestNetworkStation,
-  getCalculatedDistance,
+  getCalculatedCoordination,
 } = require("./utils.js");
 
 test("returns summed values of network station properties are correct", () => {
@@ -98,28 +98,28 @@ test("returns closest network station", () => {
   ).toEqual(networkStations[4]);
 });
 
-test("returns calculated distance", () => {
-  expect(getCalculatedDistance(devices[0], networkStations[0])).toEqual({
+test("returns calculated coordination", () => {
+  expect(getCalculatedCoordination(devices[0], networkStations[0])).toEqual({
     x: 0,
     y: 0,
   });
-  expect(getCalculatedDistance(devices[1], networkStations[4])).toEqual({
+  expect(getCalculatedCoordination(devices[1], networkStations[4])).toEqual({
     x: 1,
     y: 5625,
   });
-  expect(getCalculatedDistance(devices[2], networkStations[3])).toEqual({
+  expect(getCalculatedCoordination(devices[2], networkStations[3])).toEqual({
     x: 100,
     y: 25,
   });
-  expect(getCalculatedDistance(devices[3], networkStations[1])).toEqual({
+  expect(getCalculatedCoordination(devices[3], networkStations[1])).toEqual({
     x: 4,
     y: 4,
   });
-  expect(getCalculatedDistance(devices[4], networkStations[3])).toEqual({
+  expect(getCalculatedCoordination(devices[4], networkStations[3])).toEqual({
     x: 64,
     y: 64,
   });
-  expect(getCalculatedDistance(devices[5], networkStations[4])).toEqual({
+  expect(getCalculatedCoordination(devices[5], networkStations[4])).toEqual({
     x: 5476,
     y: 5476,
   });

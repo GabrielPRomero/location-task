@@ -2,7 +2,7 @@ const { networkStations, devices } = require("./data.js");
 const {
   getSumOfObjProperties,
   getClosestNetworkStation,
-  getCalculatedDistance,
+  getCalculatedCoordination,
 } = require("./utils.js");
 
 const summedValuesOfNetworkStations = networkStations.map((station) => {
@@ -15,7 +15,7 @@ devices.map((device) => {
     summedValuesOfNetworkStations,
     networkStations
   );
-  const calcCoordination = getCalculatedDistance(device, closestStation);
+  const calcCoordination = getCalculatedCoordination(device, closestStation);
   const { reach } = closestStation;
   const { x, y } = calcCoordination;
   let speed = 0;
